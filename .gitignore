@@ -1,0 +1,83 @@
+# ----- Python artifacts -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Unit test / coverage reports
+.coverage*
+htmlcov/
+pytest_cache/
+.tox/
+.mypy_cache/
+.pytype/
+
+# Logs & runtime
+*.log
+logs/
+*.pid
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+.envrc
+
+# Cache & temp
+.cache/
+tmp/
+temp/
+uploads/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Node / frontend (future-proofing)
+frontend/node_modules/
+frontend/.parcel-cache/
+*.map
+
+# Generated exports (optional - comment out if you want them committed)
+sections_*.json
+
+# Reports / artifacts
+coverage.xml
+report.xml
+
+# Backup files
+*~
+*.bak
+*.orig
+
+# macOS metadata
+.AppleDouble
+.LSOverride
+
+# Python profiling
+profiler_output/
+
+# Uvicorn reload artifacts
+.reload
+
+# Ignore sample/demo binaries if not desired
+# demo/sample_document.docx
+# demo/sample_document.pdf

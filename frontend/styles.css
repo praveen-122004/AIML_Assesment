@@ -1,0 +1,113 @@
+/* frontend/styles.css */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+button {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Layout */
+.workspace { display: flex; gap: 20px; align-items: flex-start; }
+.sidebar { 
+  width: 240px; 
+  background: #f8fafc; 
+  border: 1px solid #cbd5e1; 
+  border-radius: 8px; 
+  padding: 16px; 
+  max-height: 640px; 
+  overflow-y: auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.sidebar h3 { 
+  margin-top: 0; 
+  margin-bottom: 12px;
+  font-size: 1.0rem; 
+  text-align: left; 
+  color: #1e293b;
+  font-weight: 600;
+}
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li { margin: 6px 0; }
+.sidebar button.section-link { 
+  width: 100%; 
+  text-align: left; 
+  background: #ffffff; 
+  border: 1px solid #cbd5e1; 
+  padding: 10px 12px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-size: 0.875rem; 
+  line-height: 1.4;
+  color: #334155;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.sidebar button.section-link:hover { 
+  background: #e0e7ff; 
+  border-color: #818cf8;
+  color: #4338ca;
+}
+.sidebar button.section-link.active { 
+  background: #0078d7; 
+  color: #ffffff; 
+  border-color: #0078d7;
+  box-shadow: 0 2px 4px rgba(0,120,215,0.3);
+}
+
+.editor-area { flex: 1; min-width: 0; }
+.editor-box { min-height: 480px; border: 1px solid #ccc; border-radius: 8px; background: #fff; padding: 0 0 8px; }
+.ck-editor__editable_inline { min-height: 420px; }
+
+@media (max-width: 960px) {
+  .workspace { flex-direction: column; }
+  .sidebar { width: 100%; order: 2; }
+  .editor-area { order: 1; }
+}
+
+#output {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  height: 250px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}

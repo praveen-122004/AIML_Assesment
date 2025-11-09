@@ -1,0 +1,42 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Document Editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📄 Web Document Editor</h1>
+
+    <!-- Upload Form -->
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="file" accept=".pdf,.docx" required />
+      <button type="submit">Upload Document</button>
+    </form>
+
+    <div class="workspace">
+      <!-- Sidebar for Sections -->
+      <aside class="sidebar">
+        <h3>Sections</h3>
+        <ul id="sectionsList"></ul>
+      </aside>
+
+      <!-- Editor Area -->
+      <section class="editor-area">
+        <h2>🖊️ Edit Document</h2>
+        <div id="editor" class="editor-box"></div>
+        <button id="exportBtn">Export JSON</button>
+        <h3>📤 Exported JSON Output</h3>
+        <pre id="output"></pre>
+      </section>
+    </div>
+  </div>
+
+  <!-- CKEditor 5 Classic Build -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
