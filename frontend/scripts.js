@@ -1,6 +1,8 @@
 // frontend/scripts.js
 
 let editor; // CKEditor instance
+const API_BASE = "https://ai-ml-backend.onrender.com";
+
 let fullContent = ''; // Store complete document content
 let sectionsData = {}; // Store sections mapping
 let currentSectionTitle = null; // Track which section is being edited
@@ -210,7 +212,7 @@ uploadForm.addEventListener("submit", async (e) => {
   editedSections = {};
 
   try {
-    const res = await fetch("/api/upload", { method: "POST", body: formData });
+    const res = await fetch(`${API_BASE}/api/upload`, { method: "POST", body: formData });
     const data = await res.json();
     if (data.error) {
       output.textContent = `❌ Error: ${data.error}`;
@@ -243,13 +245,12 @@ exportBtn.addEventListener("click", async () => {
 
   try {
     // Send as JSON instead of form-data to avoid size limits
-    const res = await fetch("/api/export_json", { 
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ html: fullHTML })
-    });
+    const res = await fetch(`${API_BASE}/api/export_json`, { 
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ html: fullHTML })
+});
+
     
     const data = await res.json();
     if (data.error) {

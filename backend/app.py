@@ -16,12 +16,13 @@ app = FastAPI(title="Web Document Editor")
 
 # Allow frontend to access backend (CORS)
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+  CORSMiddleware,
+  allow_origins=["https://aimlassesment.vercel.app/"],
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
 )
+
 
 
 # ===== API ROUTES (MUST BE DEFINED BEFORE StaticFiles MOUNT) =====
