@@ -1,7 +1,7 @@
 // frontend/scripts.js
 
 let editor; // CKEditor instance
-const API_BASE = "https://ai-ml-backend.onrender.com";
+const API_BASE = "https://aiml-assesment.onrender.com";
 
 let fullContent = ''; // Store complete document content
 let sectionsData = {}; // Store sections mapping
@@ -212,7 +212,7 @@ uploadForm.addEventListener("submit", async (e) => {
   editedSections = {};
 
   try {
-    const res = await fetch(`${API_BASE}/api/upload`, { method: "POST", body: formData });
+const res = await fetch(`${API_BASE}/api/upload`, { method: "POST", body: formData });
     const data = await res.json();
     if (data.error) {
       output.textContent = `❌ Error: ${data.error}`;
