@@ -15,13 +15,19 @@ from backend.utils.section_extractor import extract_sections
 app = FastAPI(title="Web Document Editor")
 
 # Allow frontend to access backend (CORS)
+
+# allow only your frontend origin (replace if your Vercel URL is different)
+FRONTEND_ORIGIN = "https://aimlassesment.vercel.app"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://aimlassesment.vercel.app"],
+    allow_origins=[FRONTEND_ORIGIN],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
+
 
 
 
